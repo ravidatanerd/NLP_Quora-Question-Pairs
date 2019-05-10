@@ -14,3 +14,25 @@ id - the id of a training set question pair
 qid1, qid2 - unique ids of each question (only available in train.csv)
 question1, question2 - the full text of each question
 is_duplicate - the target variable, set to 1 if question1 and question2 have essentially the same meaning, and 0 otherwise. "
+
+In general Quora uses a Random Forest model to identify duplicate questions.
+
+Approach : Identify question pairs that have the same intent.
+
+Can We ?
+Yes we can capture the intent for the question and Compare them together to identify duplicates using LSTM .
+
+But if we are using TF-IDF ,Count-Vectorizer It will not capture the intent but will only compare the Word Vector
+and compare the Vector similarity , Which Is not apt technquie to use in our case. But Will implement it to figure the issues asssociated with these vectorizers.
+
+I have Used the following for the analysis:
+Quora’s train.csv file and Test.csv for Evalution 
+
+Random Forest,
+Support Vector,
+XGBoost (Extreme Gradient Boosting) classifiers.
+
+To Capture Sentiment Using:
+
+word2vec embedding with MaLSTM (Manhattan Long Short-Term Memory) to capture sentiment.
+
